@@ -1,0 +1,17 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Door 3</title><style>
+:root{--bg:#161b22;--ink:#e6e1d6;--dim:#8b949e;--red:#e5534b;--line:#30363d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Georgia,serif;min-height:100vh;display:grid;place-items:center;padding:24px}
+main{max-width:620px;width:100%;border:1px solid var(--line);padding:32px;border-left:6px solid var(--red)}
+h1{font-size:28px;margin:0 0 6px}p{margin:10px 0}.dim{color:var(--dim)}
+input{width:100%;padding:10px;margin:8px 0;background:#0d1117;border:1px solid var(--line);color:var(--ink);font:16px monospace}
+button{padding:10px 18px;background:var(--red);color:#fff;border:0;font:16px Georgia,serif;cursor:pointer}
+button:focus-visible,input:focus-visible{outline:2px solid var(--ink)}
+code,.mono{font-family:monospace;word-break:break-all}.msg{margin-top:14px;min-height:24px}.ok{margin-top:14px;padding:12px 14px;border-left:4px solid #3fb950;background:#12261a}a{color:#7ee787}
+</style></head><body><main><h1>Door 3: The photo</h1><p>Security cameras caught only this picture. Looks like nothing. Look closer, and not only with your eyes.</p>
+<img src="shadow.png" alt="Dark grid with a red circle" style="max-width:100%;border:1px solid var(--line)"><p class="dim">Hint: download it and open it with tools, not just an image viewer.</p><hr style="border:0;border-top:1px solid var(--line);margin:22px 0"><p class="dim">Found the secret word? Enter it to unlock Door 3.</p><input id="vw" placeholder="Secret word"><button onclick="vv()">Check word</button><p id="vm" class="msg"></p></main><script>
+function h(s){var x=2166136261;for(var i=0;i<s.length;i++){x^=s.charCodeAt(i);x=Math.imul(x,16777619)>>>0}return x}
+function vv(){var v=document.getElementById('vw').value.trim().toLowerCase(),m=document.getElementById('vm');
+if(h(v)!==977519969){m.textContent='Not the right word. Keep decoding.';return}
+var e="17070e165b28035a1b4a07031e04",o='';for(var j=0;j<e.length;j+=2){o+=String.fromCharCode(parseInt(e.substr(j,2),16)^v.charCodeAt((j/2)%v.length))}
+m.innerHTML='<div class="ok"><b>Door 3 unlocked!</b><br>You found the word. <a href="'+o+'">Go to the next door</a></div>'}
+</script></body></html>
